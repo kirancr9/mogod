@@ -9,7 +9,7 @@
     <script src="main.js"></script>
 </head>
 <body>
-    <table>
+    <table border="2">
         <tr>
             <th>
                 BookId
@@ -29,7 +29,7 @@
         </tr>
         <% for(var i=0;i<data.length;i++){ %>
             <tr>
-                <td><%=data[i].BookId %></td>
+                <td><%=data[i].BookID %></td>
                 <td><%=data[i].BookName %></td>
                 <td><%=data[i].Author %></td>
                 <td><%=data[i].Price %></td>
