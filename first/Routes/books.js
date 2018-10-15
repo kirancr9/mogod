@@ -1,12 +1,12 @@
-var express = require('express')
-var app = express()
+var express = require('express');
+var router = express.Router();
 var mongodb=require('mongodb');
 var mongoclient=mongodb.MongoClient;
 var url = "mongodb://127.0.0.1:27017/sampledb"
 
-router.get("book/view",function(req,res){
+router.get("/View",function(req,res){
     mongoclient.connect(url,function(err,database){
-        var db = database('sampledb');
+        var db = database.db('sampledb');
         var collection = db.collection('Books');
         collection.find().toArray(function(err,result){
             if(err)
@@ -15,7 +15,7 @@ router.get("book/view",function(req,res){
             }
             else
             {
-                res.render("viewBooks",{"data":result})
+                res.render("ViewBooks",{"data":result});
                 console.log(result);
             }
         })
@@ -23,9 +23,5 @@ router.get("book/view",function(req,res){
     });
 })
 
+module.exports = router;
 
-
-app.listen(8600,function(req,res){
-
-    console.log("Server has started..")
-})
