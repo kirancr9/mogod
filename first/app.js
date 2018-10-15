@@ -7,7 +7,7 @@ app.get("/",function(req,res){
     res.render("Home");
 })
 
-app.use("/book")
+app.use("/book",books);
 
 app.listen(8600,function(req,res){
 
