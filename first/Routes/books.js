@@ -1,9 +1,11 @@
 var express = require('express')
 var app = express()
 
-app.get("/",function(req,res){
-    res.send("Hello world! :)")
+router.get("book/view",function(req,res){
+
 })
+
+var mongodb=require('mongodb');
 
 app.listen(8600,function(req,res){
 
